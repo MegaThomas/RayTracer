@@ -1,0 +1,1 @@
+# ADD_EXECUTABLE(../rayTracer main.cpp bmp.cpp)

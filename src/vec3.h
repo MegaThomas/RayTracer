@@ -39,7 +39,7 @@ public:
     inline real b() const { return e[2]; }
 
     inline real operator[](int i) const { return e[i]; }
-    inline real dot(const Vec3 &v)
+    inline real dot(const Vec3 &v) const
     {
         return v[0] * e[0] + v[1] * e[1] + v[2] * e[2];
     }
@@ -61,12 +61,13 @@ public:
     inline Vec3 operator/=(const real t)  { return Vec3(e[0] / t, e[1] / t, e[2] / t); }
     inline real norm2() const { return sqrt(e[0] * e[0] + e[1] * e[1] + e[2] * e[2]); }
     inline real squared_norm2() const { return e[0] * e[0] + e[1] * e[1] + e[2] * e[2]; }
-    inline void normalize()
+    inline Vec3& normalize()
     {
         real l = this->norm2();
         e[0] /= l;
         e[1] /= l;
         e[2] /= l;
+        return *this;
     }
 
 private:

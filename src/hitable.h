@@ -4,11 +4,14 @@
 #include "typeDef.h"
 #include "ray.h"
 
+class Material;
+
 struct HitRecord
 {
     real t;
     Vec3 p;
     Vec3 normal;
+    Material *mat;
 };
 
 class Hitable
